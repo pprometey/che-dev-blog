@@ -1,5 +1,6 @@
-# Obsidian Git Ignore Template
+# Obsidian + Quartz Git Ignore Template
 */.obsidian/workspace.json
+/quartz/content
 
 # Logs
 logs

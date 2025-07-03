@@ -5,7 +5,7 @@ tags: []            # Теги ["example", "guide", "quartz"]
 aliases: []         #  Синонимы ["старый-путь", "/другой-путь"]
 
 # Управление публикацией
-draft: false        # true = скрыть как черновик
+draft: true        # true = скрыть как черновик
 publish: true       # false = отключить публикацию вручную
 
 # Язык и URL
