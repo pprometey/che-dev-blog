@@ -1,0 +1,9 @@
+{
+  "defaultViewMode": "preview",
+  "livePreview": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "unsorted",
+  "userIgnoreFilters": [
+    "~templates/"
+  ]
+}
