@@ -2,7 +2,7 @@
 
 Dev blog
 
-## Deployment Guide: Obsidian + Quartz + Github Pages
+## Deployment Guide: Obsidian + Quartz + Cloudflare Pages
 
 ### 1. Create a GitHub Repository
 
@@ -58,14 +58,48 @@ ln -s che-dev-blog quartz/content
 # cmd: mklink /D quartz\content che-dev-blog
 # powershell: New-Item -ItemType SymbolicLink -Path "quartz\content" -Target "che-dev-blog"
 ```
+
 > Make sure you run these commands from the project root and adjust the paths if needed.
 
 ### 5. Build the Site and Run in Development Mode
 
 Run the following inside the quartz folder to build the static site and start the development server:
-```
+
+```bash
 cd quartz
 npx quartz build --serve
 ```
+
 - The command `npx quartz build` compiles the site and outputs static files ready for deployment into the `quartz/public` folder.
 - Adding `--serve` starts a local development server with live reload, useful for previewing changes (default http://localhost:8080/).
+
+### 6. Deploy Quartz Site on Cloudflare Pages
+
+### Pushing Changes to GitHub
+
+Before you start deployment in Cloudflare, make sure all your local changes are committed and pushed:
+
+```bash
+git add . && git commit -m "Deploy: update site content and config" && git push origin main
+```
+
+### Deploy on Cloudflare Pages
+
+- Go to <https://dash.cloudflare.com/> and log in to your Cloudflare account.
+- In the dashboard sidebar, select Compute (Workers) → Workers & Pages.
+- Click Create application → Pages → Connect to Git.
+- Select your GitHub repository (for example, `che-dev-blog`).
+- In the Set up builds and deployments section, configure these values: 
+
+Option | Value
+--- | ---
+Project name | chernyavsky (this will define your site domain: chernyavsky.pages.dev)
+Production branch | main
+Framework preset | None
+Build command | `mkdir -p quartz/content && cp -r che-dev-blog/. quartz/content/ && cd quartz && npm install && npx quartz build`
+Build output directory | `quartz/public`
+
+- Press Save and deploy.
+Your site will be deployed in about a minute. The site will be available at: <https://chernyavsky.pages.dev>
+
+From now on, every time you push changes to the main branch on GitHub, Cloudflare Pages will rebuild and update your site automatically.

@@ -12,7 +12,7 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-           © {year} <a href="https:/chernyavsky.is-a.dev/">Alexey Chernyavskiy</a>
+           © {year} Alexey Chernyavskiy
         </p>
       </footer>
     )

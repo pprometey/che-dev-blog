@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "chernyavsky.is-a.dev",
+    baseUrl: "chernyavsky.pages.dev",
     ignorePatterns: ["private", "templates", ".obsidian", "~templates/**"],
     defaultDateType: "modified",
     theme: {
