@@ -145,4 +145,4 @@ From now on, every time you push changes to the main branch on GitHub, Cloudflar
 
 ## Links
 
-- [che-dev-blog](github.com/pprometey/che-dev-blog) is the source code of this blog project made with Obsidian + Quartz. You can check out the history of the first commits, it shows the step-by-step installation and integration process.
+- [che-dev-blog](https://github.com/pprometey/che-dev-blog) is the source code of this blog project made with Obsidian + Quartz. You can check out the history of the first commits, it shows the step-by-step installation and integration process.

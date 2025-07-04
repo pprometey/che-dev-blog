@@ -146,4 +146,4 @@ Once the site is generated, it will be available at: https://<project_name_in_cl
 
 ## Ссылки
 
-- [che-dev-blog](github.com/pprometey/che-dev-blog) - исходный код проект этого блога, сделанный с помощью Obsidian + Quartz. Можете посмотреть историю первых коммитов, в ней отражен пошаговый процесс их установки и интеграции.
+- [che-dev-blog](https://github.com/pprometey/che-dev-blog) - исходный код проект этого блога, сделанный с помощью Obsidian + Quartz. Можете посмотреть историю первых коммитов, в ней отражен пошаговый процесс их установки и интеграции.
