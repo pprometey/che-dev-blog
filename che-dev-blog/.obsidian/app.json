@@ -5,5 +5,8 @@
   "newFileFolderPath": "unsorted",
   "userIgnoreFilters": [
     "~templates/"
-  ]
+  ],
+  "attachmentFolderPath": "~attachments",
+  "alwaysUpdateLinks": true,
+  "tabSize": 2
 }

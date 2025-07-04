@@ -1,3 +1,22 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+.about-text {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+
+  img {
+    max-width: 180px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    img {
+      max-width: 100%;
+    }
+  }
+}

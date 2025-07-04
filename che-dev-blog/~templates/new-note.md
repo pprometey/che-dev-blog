@@ -1,9 +1,9 @@
 ---
 title: <% tp.file.title %>
 lang: ru
-draft: true
+draft: false
 publish: true
-tags: []
+tags: 
 created: <% tp.date.now("YYYY-MM-DD HH:mm") %>
 ---
 
