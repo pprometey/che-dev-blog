@@ -1,5 +1,16 @@
+@use "./variables.scss" as *;
 @use "./base.scss";
 
+:root {
+  --accent-red: #cc4b4b;
+  --accent-orange: #d97c2b;
+  --accent-yellow: #bba91c;
+  --accent-green: #5d8d5d;
+  --accent-blue: #3a6ea5;
+  --accent-purple: #7b5ea7;
+}
+
+//Home
 .about-text {
   display: flex;
   flex-direction: row;
@@ -19,4 +30,104 @@
       max-width: 100%;
     }
   }
+}
+
+// Page Title
+.page-title{
+  font-size: 1.5rem;
+}
+
+.page-title {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url('/static/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.4em;
+    vertical-align: middle;
+  }
+
+  @media (max-width: map-get($breakpoints, mobile)) {
+    a {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    &::before {
+      margin-right: 0.5rem; 
+    }
+  }
+}
+
+//Breadcrumb
+.breadcrumb-container {
+    margin-bottom: 1rem;
+    
+   @media (min-width: map-get($breakpoints, desktop)) {
+      margin-top: 1.5rem;
+   }
+
+}
+
+
+// Footer
+
+footer {
+  margin-bottom: 2rem;
+}
+
+//Sidebar Explorer
+.sidebar a.folder-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--accent-green);
+}
+
+.sidebar .explorer a:not(.folder-title) {
+  font-weight: normal;
+  font-size: 0.9rem;  
+}
+
+.sidebar .explorer ul.content li {
+  line-height: 1.2rem;
+}
+
+//Sidebar Toc
+.sidebar .toc a {
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+// Page listing
+.page-listing .tag-link {
+  color: var(--accent-purple);
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.page-listing .tags
+{
+  margin: 0.1rem;
+}
+
+// Page
+.article-title {
+  margin-top: 0;
+}
+
+.page-header .tag-link {
+  color: var(--accent-purple);
+  font-size: 0.75rem;
+  font-weight: normal;
 }

@@ -31,13 +31,13 @@ git subtree pull --prefix=quartz https://github.com/jackyzha0/quartz.git v4 --sq
 ### 3. Create an Obsidian Vault
 
 - Inside the project root, create a folder for your Obsidian vault (e.g. `che-dev-blog/`)
-- Open Obsidian → "Open folder as vault" → select the `che-dev-blog/` folder
+- Open Obsidian -> "Open folder as vault" -> select the `che-dev-blog/` folder
 - This folder will contain your Markdown notes
 
 Then:
 
 - Configure your preferred community plugins and templates inside the vault
-- Create a new note named `index` in the root of the vault — this will be your homepage
+- Create a new note named `index` in the root of the vault - this will be your homepage
 
 ### 4. Configure Quartz
 
@@ -86,8 +86,8 @@ git add . && git commit -m "Deploy: update site content and config" && git push 
 ### Deploy on Cloudflare Pages
 
 - Go to <https://dash.cloudflare.com/> and log in to your Cloudflare account.
-- In the dashboard sidebar, select Compute (Workers) → Workers & Pages.
-- Click Create application → Pages → Connect to Git.
+- In the dashboard sidebar, select Compute (Workers) -> Workers & Pages.
+- Click Create application -> Pages -> Connect to Git.
 - Select your GitHub repository (for example, `che-dev-blog`).
 - In the Set up builds and deployments section, configure these values: 
 

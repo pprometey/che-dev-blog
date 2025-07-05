@@ -82,8 +82,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                     {title}
                   </a>
                 </h3>
-              </div>
-              <ul class="tags">
+                <ul class="tags">
                 {tags.map((tag) => (
                   <li>
                     <a
@@ -95,6 +94,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
           </li>
         )
