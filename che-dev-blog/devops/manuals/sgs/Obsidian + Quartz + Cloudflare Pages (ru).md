@@ -143,7 +143,3 @@ Build output directory | `quartz/public`
 Once the site is generated, it will be available at: https://<project_name_in_cloudflare_page>.pages.dev (I named the project `chernyavsky` and in my case it is https://chernyavsky.pages.dev)
 
 С этого момента при каждом пуше в ветку `main` Cloudflare Pages будет автоматически пересобирать и обновлять сайт.
-
-## Ссылки
-
-- [che-dev-blog](https://github.com/pprometey/che-dev-blog) - исходный код проект этого блога, сделанный с помощью Obsidian + Quartz. Можете посмотреть историю первых коммитов, в ней отражен пошаговый процесс их установки и интеграции.
