@@ -1,5 +1,6 @@
 ---
 title: <% tp.file.title %>
+description: 
 lang: ru
 draft: false
 publish: true
