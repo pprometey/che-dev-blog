@@ -3,7 +3,7 @@ title: Obsidian + Quartz + Cloudflare Pages (en)
 lang: en
 draft: false
 publish: true
-tags: [Obsidian, Quartz, Cloudflare Pages, 'Static Generator Site', SGS, Markdown]
+tags: [Obsidian, Quartz, "Cloudflare Pages", "Static Generator Site", sgs, Markdown, devops]
 created: 2025-07-04 09:32
 ---
 
@@ -90,6 +90,7 @@ rm -rf quartz/content
 ```
 
 2. Create a symbolic link named quartz/content pointing to your Obsidian vault folder:
+
 ```bash
 ln -s che-dev-blog quartz/content
 
@@ -110,7 +111,7 @@ npx quartz build --serve
 ```
 
 - The command `npx quartz build` compiles the site and outputs static files ready for deployment into the `quartz/public` folder.
-- Adding `--serve` starts a local development server with live reload, useful for previewing changes (default http://localhost:8080/).
+- Adding `--serve` starts a local development server with live reload, useful for previewing changes (default <http://localhost:8080/>).
 
 ### 6. Deploy Quartz Site on Cloudflare Pages
 
@@ -128,7 +129,7 @@ git add . && git commit -m "Deploy: update site content and config" && git push 
 - In the dashboard sidebar, select Compute (Workers) -> Workers & Pages.
 - Click Create application -> Pages -> Connect to Git.
 - Select your GitHub repository (for example, `che-dev-blog`).
-- In the Set up builds and deployments section, configure these values: 
+- In the Set up builds and deployments section, configure these values:
 
 Option | Value
 --- | ---

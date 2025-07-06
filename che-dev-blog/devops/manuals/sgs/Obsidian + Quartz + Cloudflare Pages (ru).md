@@ -3,7 +3,7 @@ title: Obsidian + Quartz + Cloudflare Pages (ru)
 lang: ru
 draft: false
 publish: true
-tags: [Obsidian, Quartz, Cloudflare Pages, 'Static Generator Site', SGS, Markdown]
+tags: [Obsidian, Quartz, "Cloudflare Pages", "Static Generator Site", sgs, Markdown, devops]
 created: 2025-07-04 07:26
 ---
 
