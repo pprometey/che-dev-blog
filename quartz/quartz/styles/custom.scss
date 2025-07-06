@@ -35,40 +35,65 @@
 // Page Title
 .page-title{
   font-size: 1.5rem;
+  line-height: 0; 
 }
 
-.page-title {
+.page-title a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  text-decoration: none;
+}
 
-  &::before {
-    content: "";
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background-image: url('/static/icon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 0.4em;
-    vertical-align: middle;
-  }
+.page-title a .logo {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url('/static/icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.4em;
+}
 
-  @media (max-width: map-get($breakpoints, mobile)) {
-    a {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    &::before {
-      margin-right: 0.5rem; 
-    }
+@media #{$mobile} {
+  .page-title a .title-text {
+    display: none;
   }
 }
+
+// .page-title {
+//   position: relative;
+
+//   &::before {
+//     content: "";
+//     display: inline-block;
+//     width: 32px;
+//     height: 32px;
+//     background-image: url('/static/icon.png');
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     margin-right: 0.4em;
+//     vertical-align: middle;
+//   }
+
+//   @media (max-width: map-get($breakpoints, mobile)) {
+//     a {
+//       position: absolute;
+//       width: 1px;
+//       height: 1px;
+//       padding: 0;
+//       overflow: hidden;
+//       clip: rect(0, 0, 0, 0);
+//       white-space: nowrap;
+//       border: 0;
+//     }
+
+//     &::before {
+//       margin-right: 0.5rem; 
+//     }
+//   }
+// }
 
 //Breadcrumb
 .breadcrumb-container {
@@ -103,6 +128,29 @@ footer {
   line-height: 1.2rem;
 }
 
+
+.explorer-content ul.content li > a {
+  position: relative;
+  display: block;
+  padding-left: 0.7rem;
+  text-indent: 0;
+}
+
+.explorer-content ul.content li > a::before {
+  content: "- ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: black;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Убираем тире у папок */
+.folder-container a::before {
+  content: none !important;
+}
+
 //Sidebar Toc
 .sidebar .toc a {
   font-weight: normal;
@@ -131,3 +179,4 @@ footer {
   font-size: 0.75rem;
   font-weight: normal;
 }
+
