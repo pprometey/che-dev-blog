@@ -10,7 +10,7 @@
   --accent-purple: #7b5ea7;
 }
 
-//Home
+//Home Page
 .about-text {
   display: flex;
   flex-direction: row;
@@ -62,39 +62,6 @@
   }
 }
 
-// .page-title {
-//   position: relative;
-
-//   &::before {
-//     content: "";
-//     display: inline-block;
-//     width: 32px;
-//     height: 32px;
-//     background-image: url('/static/icon.png');
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     margin-right: 0.4em;
-//     vertical-align: middle;
-//   }
-
-//   @media (max-width: map-get($breakpoints, mobile)) {
-//     a {
-//       position: absolute;
-//       width: 1px;
-//       height: 1px;
-//       padding: 0;
-//       overflow: hidden;
-//       clip: rect(0, 0, 0, 0);
-//       white-space: nowrap;
-//       border: 0;
-//     }
-
-//     &::before {
-//       margin-right: 0.5rem; 
-//     }
-//   }
-// }
-
 //Breadcrumb
 .breadcrumb-container {
     margin-bottom: 1rem;
@@ -141,12 +108,11 @@ footer {
   position: absolute;
   left: 0;
   top: 0;
-  color: black;
+  color:  var(--accent-green);
   font-weight: bold;
   user-select: none;
 }
 
-/* Убираем тире у папок */
 .folder-container a::before {
   content: none !important;
 }
