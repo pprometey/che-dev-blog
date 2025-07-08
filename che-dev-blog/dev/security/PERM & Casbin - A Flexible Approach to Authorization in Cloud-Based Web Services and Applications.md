@@ -12,8 +12,8 @@ tags:
   - PML
   - ACL
   - authorization
-  - Contextual
-  - Roles
+  - contextual roles
+  - dynamic roles
   - casbin
   - dotnet
 created: 2021-01-31 16:58
