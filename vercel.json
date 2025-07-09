@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://chernyavsky.pages.dev",
+      "permanent": true
+    }
+  ]
+}
