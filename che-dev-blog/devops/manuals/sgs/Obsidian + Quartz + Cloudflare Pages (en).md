@@ -11,7 +11,7 @@ created: 2025-07-04 09:32
 
 I've always had a bit of a soft spot for static site generators. Over the years, I've tried many of them for different purposes - blogs, project documentation, knowledge bases, and more. VuePress, Hugo, Jekyll, MkDocs, DocFix, Cobalt, GitBook, Zola, Gatsby, Metalsmith, Scully - these are just the ones that immediately come to mind.
 
-The biggest pain point I kept running into was the overhead - the time and effort it takes to get from raw content to a polished published product. My typical workflow involved drafting content in my personal knowledge base and notes app (originally OneNote, then since 2022 - Obsidian), and later transferring those notes into the static site project. This inevitably created two sources of truth: the original draft in my note-taking system, and the published version in the generator project. Over time, these would drift apart, and more often than not, I’d abandon one of them - usually the drafts.
+The biggest pain point I kept running into was the overhead - the time and effort it takes to get from raw content to a polished published product. My typical workflow involved drafting content in my personal knowledge base and notes app (originally OneNote, then since 2022 - Obsidian), and later transferring those notes into the static site project. This inevitably created two sources of truth: the original draft in my note-taking system, and the published version in the generator project. Over time, these would drift apart, and more often than not, I'd abandon one of them - usually the drafts.
 
 Another common issue: every generator had its own templating system and directory structure. Some supported one flavor of Markdown, others another - with varying levels of support for extensions. Every time I switched tools, I had to adapt both my content and its structure. And not every generator allowed me to fully realize what I had in mind - compromises were always part of the deal.
 
@@ -21,9 +21,9 @@ With this setup, I can keep all my notes in one place - Obsidian, which is an in
 
 When paired with the Quartz static site generator - which is just as flexible and beginner-friendly as Obsidian - this becomes an elegant system for writing and selectively publishing notes. Right now, this is my top choice. The only thing I miss about Quartz is the creation of multi-lingual versions of the site.
 
-I don’t like the approach to creating a project for linking Obsidian and Quartz repository described in the [official Quartz documentation](https://quartz.jzhao.xyz/#-get-started) very much, because it makes the repository a part of the Quartz project itself and pulls in the entire history of its commits. It is clear that this is quite friendly for beginners and removes all the complexity of working with Git, but for me as a programmer it is terrible.
+I’m not a big fan of the approach suggested in the [official Quartz documentation](https://quartz.jzhao.xyz/#-get-started) for setting up a project that links Obsidian with Quartz. While it’s convenient for beginners and hides most of the Git complexity, it makes the Obsidian vault a part of the Quartz project—complete with its full commit history—which, as a developer, doesn’t feel quite right to me.
 
-So we'll be doing Obsidian and Quartz in a more “programmer” style, and publishing the site on Cloudflare Pages, as a more [preferred option for Quartz's limitations](https://quartz.jzhao.xyz/hosting#github-pages) than publishing it on GitHub Pages.
+Instead, we’ll take the opposite approach: we’ll treat Quartz as a component of our blog, not the other way around as its creator suggests. Once that’s set up, we’ll deploy the result to Cloudflare Pages, which is a [better fit for Quartz than GitHub Pages](https://quartz.jzhao.xyz/hosting#github-pages), especially given the limitations of the latter.
 
 ## Deployment Guide: Obsidian + Quartz + Cloudflare Pages
 
