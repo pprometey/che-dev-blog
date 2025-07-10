@@ -17,7 +17,7 @@ The increase of Internet censorship by authoritarian regimes expands the blockag
 > Article 19  
 Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers.
 
-The following is the detailed 6 steps instruction for non-IT people to deploy free* [VPN service](https://ru.bmstu.wiki/VPN_(Virtual_Private_Network)) upon [Wireguard](https://www.wireguard.com/) technology in [Amazon Web Services (AWS) cloud infrastructure](https://aws.amazon.com/ru/), using a 12 months free account, on an Instance (virtual machine) run by Ubuntu Server 18.04 LTS.
+The following is the detailed 6 steps instruction for non-IT people to deploy free* [VPN service](https://en.wikipedia.org/wiki/VPN) upon [Wireguard](https://www.wireguard.com/) technology in [Amazon Web Services (AWS) cloud infrastructure](https://aws.amazon.com/ru/), using a 12 months free account, on an Instance (virtual machine) run by Ubuntu Server 18.04 LTS.
 
 I tried to make this walkthrough as friendly as possible to people far from IT. The only thing required is assiduity in repeating the steps described below.
 
@@ -25,12 +25,12 @@ I tried to make this walkthrough as friendly as possible to people far from IT. 
 
 ### Stages
 
-1. [Register the AWS Account.](aws-account-registration)
-2. [Create an AWS instance.](create-aws-instance)
-3. [Connect to AWS instance.](connection-to-instance)
-4. [Configure Wireguard server.](configure-wireguard)
-5. [Configure VPN Clients.](configure-vpn-clients)
-6. [Verify VPN connection.](check-the-installation-of-vpn)
+1. Register the AWS Account.
+2. Create an AWS instance.
+3. Connect to AWS instance.
+4. Configure Wireguard server.
+5. Configure VPN Clients.
+6. Verify VPN connection.
 
 ### Useful links
 
