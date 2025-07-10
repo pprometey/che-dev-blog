@@ -1,17 +1,25 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
+
+const excludeIndexBlog = (f: QuartzPluginData) =>
+  !(f.slug === "index")
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
-    },
-  }),
+  afterBody: [
+    Component.ConditionalRender({
+      component: Component.RecentNotes({ 
+        limit: 5,
+        showTags: false,
+        filter: excludeIndexBlog
+      }),
+    condition: (page) => page.fileData.slug == "index",
+    })
+  ],
+  footer: Component.Footer(),
 }
 
 // components for pages that display a single page (e.g. a single note)

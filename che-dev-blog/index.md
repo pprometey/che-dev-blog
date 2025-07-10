@@ -2,6 +2,7 @@
 title: Blog
 publish: true
 enableToc: false
+tags: ["devops","dev"]
 ---
 ## Welcome!
 
