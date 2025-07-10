@@ -3,8 +3,9 @@ title: Blog
 publish: true
 enableToc: false
 tags: ["devops","dev"]
+comments: false
 ---
-## Welcome!
+## Welcome
 
 <div class="about-text">
   <img src="~attachments/index-1751607186542.png" alt="Alexei Chernyavsky" />

@@ -17,7 +17,21 @@ export const sharedPageComponents: SharedLayout = {
         filter: excludeIndexBlog
       }),
     condition: (page) => page.fileData.slug == "index",
-    })
+    }),
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        // from data-repo
+        repo: 'pprometey/che-dev-blog',
+        // from data-repo-id
+        repoId: 'R_kgDOPGV_bw',
+        // from data-category
+        category: 'Announcements',
+        // from data-category-id
+        categoryId: 'DIC_kwDOPGV_b84Csw6c',
+        lang: 'en'
+      }
+    }),
   ],
   footer: Component.Footer(),
 }
