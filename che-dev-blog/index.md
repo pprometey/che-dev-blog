@@ -1,8 +1,7 @@
 ---
-title: Blog
+title: A Software Engineer’s Notes
 publish: true
 enableToc: false
-tags: ["devops","dev"]
 comments: false
 ---
 ## Welcome
