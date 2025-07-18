@@ -17,6 +17,7 @@ tags:
   - casbin
   - dotnet
   - dev
+  - security
 created: 2021-01-31 16:58
 ---
 
@@ -24,13 +25,13 @@ created: 2021-01-31 16:58
 
 The first version of this article was originally written as part of a research effort to find a flexible authorization mechanism for a corporate application our team was developing at the time. Standard solutions didn't fit our needs because we were building a **No-Code platform** for automating business processes for large enterprises and government agencies.
 
-The idea behind the platform was this: a business analyst, using a visual editor (built with React), could design user interfaces for various entities—such as a leave request form, product information, or employee data. They could configure access control for those entities, define business rules, and use a visual BPMN editor to create related business processes that interacted with these and other entities.
+The idea behind the platform was this: a business analyst, using a visual editor (built with React), could design user interfaces for various entities-such as a leave request form, product information, or employee data. They could configure access control for those entities, define business rules, and use a visual BPMN editor to create related business processes that interacted with these and other entities.
 
-Based on these metadata definitions, the backend (written in ASP.NET Core) would dynamically generate database objects on the fly—tables, relationships, views, indexes, keys, etc. The platform supported both MSSQL and Postgres. SQL queries for interacting with these entities were also constructed dynamically (using `sqlkata`) based on the metadata.
+Based on these metadata definitions, the backend (written in ASP.NET Core) would dynamically generate database objects on the fly-tables, relationships, views, indexes, keys, etc. The platform supported both MSSQL and Postgres. SQL queries for interacting with these entities were also constructed dynamically (using `sqlkata`) based on the metadata.
 
-At compile time, the application had no knowledge of the data structures, roles, or access rules—it was the business analyst who defined all of this at runtime, during the actual implementation of the end product built on our platform. Access control, therefore, had to work not only at the level of the entities (i.e., tables), but also at the level of specific instances (i.e., individual rows in those tables).
+At compile time, the application had no knowledge of the data structures, roles, or access rules-it was the business analyst who defined all of this at runtime, during the actual implementation of the end product built on our platform. Access control, therefore, had to work not only at the level of the entities (i.e., tables), but also at the level of specific instances (i.e., individual rows in those tables).
 
-One of my first tasks was to design and implement such an authorization system. It needed to be flexible, general-purpose, and capable of adapting to the unique requirements of any customer—regardless of size or domain—without requiring changes to the platform’s core security and authorization logic.
+One of my first tasks was to design and implement such an authorization system. It needed to be flexible, general-purpose, and capable of adapting to the unique requirements of any customer-regardless of size or domain-without requiring changes to the platform’s core security and authorization logic.
 
 At the time of writing the original article (early 2021), the idea was still just a concept. But now, as I write this preface (mid-2025), I can say with confidence that the concept proved itself fully in practice. It was successfully implemented and met all the functional and non-functional requirements. The approach is solid and production-ready.
 
@@ -46,7 +47,7 @@ Before we begin, I’d like to express my gratitude to the main author behind bo
 
 ## Fundamentals of Authorization
 
-At its core, any authorization process—no matter how complex—can be broken down into three fundamental components:
+At its core, any authorization process-no matter how complex-can be broken down into three fundamental components:
 
 - **Subject** – The entity requesting access. This could be a user, service, or group of users.
 - **Object** – The resource the subject is trying to access.
@@ -128,7 +129,7 @@ The `[policy_effect]` section defines the overall effect when multiple policy ru
 
 In the `[matchers]` section, we specify a logical expression that matches a **request** (`r`) against a **policy rule** (`p`). Here we require that the first attribute of the request `r.sub` equals the first attribute of the policy `p.sub`, and (`&&`) likewise for the object `r.obj == p.obj` and the action `r.act == p.act`.
 
-We have defined the authorization policy model. The next step is to specify **policy rules** based on the system requirements and the policy definition structure. These rules can be stored in a database or—in our case—in a `.csv` file named `client_acl_policy.csv`:
+We have defined the authorization policy model. The next step is to specify **policy rules** based on the system requirements and the policy definition structure. These rules can be stored in a database or-in our case-in a `.csv` file named `client_acl_policy.csv`:
 
 ```ini
 p, alice, client, create
@@ -170,7 +171,7 @@ if (e.Enforce(sub, obj, act)) {
 
 ### Example #2. Role-Based Access Control (RBAC)
 
-Our authorization system works well for simple scenarios, but as the number of users grows, assigning permissions individually becomes tedious—especially when there are many permissions. Therefore, we developed a new version of the access control system based on roles, illustrated in the following diagram.
+Our authorization system works well for simple scenarios, but as the number of users grows, assigning permissions individually becomes tedious-especially when there are many permissions. Therefore, we developed a new version of the access control system based on roles, illustrated in the following diagram.
 
 ![Fig.3. Role-Based Access Control (RBAC) schema](~attachments/casbin/rbac.en.png)  
 _Fig.3. Role-Based Access Control (RBAC) schema._
@@ -198,7 +199,7 @@ e = some(where (p.eft == allow))
 m = g(r.sub, p.sub) && r.obj == p.obj && r.act == p.act
 ````
 
-Here we see a new section `[role_definition]` for defining roles. The expression `g = _, _` indicates that in the `[matchers]` section, we will match two values—`r.sub` and `p.sub`. This can be extended if, for example, the application supports [multi-tenancy](https://habr.com/en/company/microsoft/blog/145027), which requires additional context during authorization (more on this later).
+Here we see a new section `[role_definition]` for defining roles. The expression `g = _, _` indicates that in the `[matchers]` section, we will match two values-`r.sub` and `p.sub`. This can be extended if, for example, the application supports [multi-tenancy](https://habr.com/en/company/microsoft/blog/145027), which requires additional context during authorization (more on this later).
 
 Another difference from the ACL model is the change in `[matchers]` where `r.sub == p.sub` is replaced with `g(r.sub, p.sub)`, which means: *if `r.sub` has the role (or inherits from) `p.sub`*.
 
@@ -238,7 +239,7 @@ if (e.Enforce(sub, obj, act)) {
 
 ### Example #3. Role-Based Access Control with Multitenancy (RBAC with domains/tenants)
 
-As our CRM application evolved, it started attracting interest from other companies. To support this, we added a new column to the clients table—`company`—which stores the name of the company that owns each client. Based on this, we ensure that each company can only view its own clients, while hiding clients from other organizations. Bob, for example, joined another company and became its CRM administrator.
+As our CRM application evolved, it started attracting interest from other companies. To support this, we added a new column to the clients table-`company`-which stores the name of the company that owns each client. Based on this, we ensure that each company can only view its own clients, while hiding clients from other organizations. Bob, for example, joined another company and became its CRM administrator.
 
 To support **multitenancy**, we simply add one more attribute to the authorization request tuple and update the policy model accordingly in the configuration file `client_rbac_with_domain_model.conf`. When defining roles and matching rules, this new attribute is taken into account:
 
@@ -591,7 +592,7 @@ In a typical RBAC setup, roles describe **what actions** can be performed on a r
 * An `author` might inherit the `user` role and also be able to *edit* and *create* articles.
 * An `admin` might inherit everything and additionally be able to *delete* articles.
 
-However, in our CMS use case, all three roles — `user`, `supervisor`, and `admin` — share the same set of permissions: they can all create, edit, and delete articles.
+However, in our CMS use case, all three roles - `user`, `supervisor`, and `admin` - share the same set of permissions: they can all create, edit, and delete articles.
 The difference lies not in what actions they can perform, but in **what data they can access**:
 
 * A `user` can see and edit only their own articles.
@@ -728,7 +729,7 @@ This can be read as:
 
 Since the `admin` role inherits from `supervisor`, admins will also satisfy this condition.
 
-We **do not** change the policy file — it remains the same. Now, here’s what this logic looks like in code:
+We **do not** change the policy file - it remains the same. Now, here’s what this logic looks like in code:
 
 ```csharp
 public void UpdateArticle(int currentUserId, Article newArticle)
@@ -828,9 +829,9 @@ I hope the examples in this article have demonstrated the flexibility, generalit
 
 It's worth noting that both policy models and policy rules can be stored in a database, and Casbin supports [policy filtering](https://casbin.org/docs/en/policy-subset-loading) to help scale access control in high-load systems with large rule sets.
 
-Under the hood, Casbin for .NET uses [DynamicExpresso.Core](https://github.com/davideicardi/DynamicExpresso) to interpret C#-style expressions inside policy matchers. This makes it possible to evaluate dynamic conditions efficiently — a major advantage in complex authorization scenarios.
+Under the hood, Casbin for .NET uses [DynamicExpresso.Core](https://github.com/davideicardi/DynamicExpresso) to interpret C#-style expressions inside policy matchers. This makes it possible to evaluate dynamic conditions efficiently - a major advantage in complex authorization scenarios.
 
-Despite being relatively young, Casbin is evolving quickly. It's already used in many production systems and is supported by a growing ecosystem of tools and APIs — such as the [admin portal UI](https://casbin.org/docs/en/admin-portal) for managing policies visually.
+Despite being relatively young, Casbin is evolving quickly. It's already used in many production systems and is supported by a growing ecosystem of tools and APIs - such as the [admin portal UI](https://casbin.org/docs/en/admin-portal) for managing policies visually.
 
 The full, self-contained code example used throughout this article is available on my [GitHub repository](https://github.com/pprometey/casbin-demo). Feel free to clone it and experiment!
 
@@ -840,7 +841,7 @@ The full, self-contained code example used throughout this article is available 
 * [List of Casbin adapters for various storage backends](https://casbin.org/docs/en/adapters)
 * [Loading policy models into the Enforcer](https://casbin.org/docs/en/model-storage)
 * [ASP.NET Core integration using Casbin middleware](https://github.com/casbin-net/casbin-aspnetcore)
-* [RBAC vs. ABAC — Access control models explained (in Russian)](https://habr.com/ru/company/custis/blog/248649)
+* [RBAC vs. ABAC - Access control models explained (in Russian)](https://habr.com/ru/company/custis/blog/248649)
 * [Casbin for Elixir](https://github.com/casbin/casbin-ex)
 
 ---

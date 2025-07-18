@@ -43,23 +43,24 @@ Then:
 
 1. Delete the entire quartz/content folder (it contains only a .gitkeep):
 
-```bash
-rm -rf quartz/content
+    ```bash
+    rm -rf quartz/content
 
-# Windows:
-# rmdir /s /q quartz\content
-```
+    # Windows:
+    # rmdir /s /q quartz\content
+    ```
 
-2. Create a symbolic link named quartz/content pointing to your Obsidian vault folder:
-```bash
-ln -s che-dev-blog quartz/content
+2. Create a symbolic link named quartz/content pointing to your Obsidian vault folder
 
-# Windows (run as Administrator):
-# cmd: mklink /D quartz\content che-dev-blog
-# powershell: New-Item -ItemType SymbolicLink -Path "quartz\content" -Target "che-dev-blog"
-```
+    ```bash
+    ln -s che-dev-blog quartz/content
 
-> Make sure you run these commands from the project root and adjust the paths if needed.
+    # Windows (run as Administrator):
+    # cmd: mklink /D quartz\content che-dev-blog
+    # powershell: New-Item -ItemType SymbolicLink -Path "quartz\content" -Target "che-dev-blog"
+    ```
+
+    > Make sure you run these commands from the project root and adjust the paths if needed.
 
 ### 5. Build the Site and Run in Development Mode
 
@@ -71,7 +72,7 @@ npx quartz build --serve
 ```
 
 - The command `npx quartz build` compiles the site and outputs static files ready for deployment into the `quartz/public` folder.
-- Adding `--serve` starts a local development server with live reload, useful for previewing changes (default http://localhost:8080/).
+- Adding `--serve` starts a local development server with live reload, useful for previewing changes (default <http://localhost:8080/>).
 
 ### 6. Deploy Quartz Site on Cloudflare Pages
 
@@ -89,7 +90,7 @@ git add . && git commit -m "Deploy: update site content and config" && git push 
 - In the dashboard sidebar, select Compute (Workers) -> Workers & Pages.
 - Click Create application -> Pages -> Connect to Git.
 - Select your GitHub repository (for example, `che-dev-blog`).
-- In the Set up builds and deployments section, configure these values: 
+- In the Set up builds and deployments section, configure these values:
 
 Option | Value
 --- | ---

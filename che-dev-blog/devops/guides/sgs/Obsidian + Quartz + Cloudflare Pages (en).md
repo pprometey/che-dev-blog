@@ -21,7 +21,7 @@ With this setup, I can keep all my notes in one place - Obsidian, which is an in
 
 When paired with the Quartz static site generator - which is just as flexible and beginner-friendly as Obsidian - this becomes an elegant system for writing and selectively publishing notes. Right now, this is my top choice. The only thing I miss about Quartz is the creation of multi-lingual versions of the site.
 
-I’m not a big fan of the approach suggested in the [official Quartz documentation](https://quartz.jzhao.xyz/#-get-started) for setting up a project that links Obsidian with Quartz. While it’s convenient for beginners and hides most of the Git complexity, it makes the Obsidian vault a part of the Quartz project—complete with its full commit history—which, as a developer, doesn’t feel quite right to me.
+I’m not a big fan of the approach suggested in the [official Quartz documentation](https://quartz.jzhao.xyz/#-get-started) for setting up a project that links Obsidian with Quartz. While it’s convenient for beginners and hides most of the Git complexity, it makes the Obsidian vault a part of the Quartz project-complete with its full commit history-which, as a developer, doesn’t feel quite right to me.
 
 Instead, we’ll take the opposite approach: we’ll treat Quartz as a component of our blog, not the other way around as its creator suggests. Once that’s set up, we’ll deploy the result to Cloudflare Pages, which is a [better fit for Quartz than GitHub Pages](https://quartz.jzhao.xyz/hosting#github-pages), especially given the limitations of the latter.
 
