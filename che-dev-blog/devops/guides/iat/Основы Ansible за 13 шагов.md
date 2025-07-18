@@ -23,68 +23,68 @@ created: 2025-07-18 15:26
 
 1. **Установите Docker Desktop:**
 
-    Для Windows, Mac или Linux - следуйте официальным инструкциям:
-    <https://docs.docker.com/get-docker/>
+Для Windows, Mac или Linux - следуйте официальным инструкциям:
+<https://docs.docker.com/get-docker/>
 
 2. **Клонируйте репозиторий курса:**
 
-    ```bash
-    git clone https://github.com/pprometey/ansible-tutorial-lab.git
-    ```
+```bash
+git clone https://github.com/pprometey/ansible-tutorial-lab.git
+```
 
-    Перейдите в каталог склонированного репозитория, это и будет корневой каталог проекта:
+Перейдите в каталог склонированного репозитория, это и будет корневой каталог проекта:
 
-    ```bash
-    cd ansible-tutorial-lab
-    ```
+```bash
+cd ansible-tutorial-lab
+```
 
 3. **Настройте переменную окружения для SSH-ключей:**
 
-    - **Windows (PowerShell):**
+- **Windows (PowerShell):**
 
-    ```powershell
-    [System.Environment]::SetEnvironmentVariable("DEFAULT_SSH_KEY", "<путь_к_папке_с_ключами>", "User")
-    ```
+```powershell
+[System.Environment]::SetEnvironmentVariable("DEFAULT_SSH_KEY", "<путь_к_папке_с_ключами>", "User")
+```
 
-    После этого перезапустите все окна VS Code.
+После этого перезапустите все окна VS Code.
 
-    - **Mac/Linux (bash):**
-    Добавьте в `~/.bashrc` или `~/.zshrc`:
+- **Mac/Linux (bash):**
+Добавьте в `~/.bashrc` или `~/.zshrc`:
 
-    ```bash
-    export DEFAULT_SSH_KEY="<путь_к_папке_с_ключами>"
-    ```
+```bash
+export DEFAULT_SSH_KEY="<путь_к_папке_с_ключами>"
+```
 
-    Затем выполните:
+Затем выполните:
 
-    ```bash
-    source ~/.bashrc
-    ```
+```bash
+source ~/.bashrc
+```
 
-    или перезапустите терминал.
+или перезапустите терминал.
 
-    В указанной папке должны находиться два файла с именами id_rsa и id_rsa.pub, это приватный и публичный SSH-ключи, которые будут использоваться Ansible для подключения к целевым узлам.
+В указанной папке должны находиться два файла с именами id_rsa и id_rsa.pub, это приватный и публичный SSH-ключи, которые будут использоваться Ansible для подключения к целевым узлам.
 
 4. **Проверьте, что переменная установлена:**
 
-    - Windows (PowerShell):
+- Windows (PowerShell):
 
-    ```powershell
-    $env:DEFAULT_SSH_KEY
-    ```
+```powershell
+$env:DEFAULT_SSH_KEY
+```
 
-    - Mac/Linux (bash):
+- Mac/Linux (bash):
 
-    ```bash
-    echo $DEFAULT_SSH_KEY
-    ```
+```bash
+echo $DEFAULT_SSH_KEY
+```
 
 5. **Запустите изолированное окружение в VS Code с расширением Remote - Containers:**
 
-    - Откройте VS Code выполнив команду `code .`
-    - [Установите расширение **Remote - Containers**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) для VS Code, если оно еще не установлено.
-    - Нажмите `F1` и выберите **Remote-Containers: Reopen in Container**.
-      Это запустит контейнеры с Ansible-мастером и целевыми нодами.
+- Откройте VS Code выполнив команду `code .`
+- [Установите расширение **Remote - Containers**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) для VS Code, если оно еще не установлено.
+- Нажмите `F1` и выберите **Remote-Containers: Reopen in Container**.
+  Это запустит контейнеры с Ansible-мастером и целевыми нодами.
 
 ## Что такое Ansible
 
