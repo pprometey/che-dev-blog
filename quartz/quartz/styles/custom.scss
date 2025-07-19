@@ -181,3 +181,24 @@ code.mermaid svg foreignObject p {
   font-weight: bold;
   user-select: none;
 }
+
+
+.recent-ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.recent-li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.recent-li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  color: var(--gray);
+  font-size: 1rem;
+}

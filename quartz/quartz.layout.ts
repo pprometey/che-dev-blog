@@ -12,7 +12,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.ConditionalRender({
       component: Component.RecentNotes({
-        limit: 5,
+        limit: 10,
         showTags: false,
         filter: excludeIndexBlog
       }),
