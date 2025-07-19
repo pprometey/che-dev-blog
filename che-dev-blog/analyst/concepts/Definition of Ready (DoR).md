@@ -4,7 +4,7 @@ description: Definition of Ready (DoR) is a set of criteria that a task must mee
 lang: en
 draft: false
 publish: true
-tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "analyst"] 
+tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "workflow", "analyst"] 
 created: 2025-07-19 19:19
 ---
 

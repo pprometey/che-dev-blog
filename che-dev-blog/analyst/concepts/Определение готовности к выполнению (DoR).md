@@ -4,7 +4,7 @@ description: Definition of Ready (DoR) — это набор критериев,
 lang: ru
 draft: false
 publish: true
-tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "analyst"]
+tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "workflow", "analyst"]
 created: 2025-07-19 17:03
 ---
 

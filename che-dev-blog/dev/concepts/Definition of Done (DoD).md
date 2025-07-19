@@ -4,7 +4,7 @@ description: A set of mandatory conditions that must be met for a task to be con
 lang: en
 draft: false
 publish: true
-tags: ["Scrum", "Agile", "DoD", "Definition of Done", "dev"]
+tags: ["Scrum", "Agile", "DoD", "Definition of Done", "workflow", "dev"]
 created: 2025-07-19 19:19
 ---
 
