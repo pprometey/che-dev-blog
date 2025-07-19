@@ -139,13 +139,13 @@ footer {
   padding-top: 3.25rem;
 }
 
-// Page listing
-.page-listing .tag-link {
-  color: var(--accent-purple);
-  font-size: 0.8rem;
+.tag-link {
+  color: var(--accent-green);
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
+// Page listing
 .page-listing .tags
 {
   margin: 0.1rem;
@@ -158,12 +158,6 @@ footer {
 
 .breadcrumb-container + .article-title {
   margin-top: 2rem;
-}
-
-.page-header .tag-link {
-  color: var(--accent-purple);
-  font-size: 0.75rem;
-  font-weight: normal;
 }
 
 .recent-notes h3 {
