@@ -53,7 +53,12 @@
   background-image: url('/static/icon.png');
   background-size: contain;
   background-repeat: no-repeat;
-  margin-right: 0.4em;
+  margin-right: 0.3rem;
+}
+
+.title-text
+{
+  margin-top: -0.2rem;
 }
 
 @media #{$mobile} {
@@ -67,9 +72,15 @@
     margin-bottom: 1rem;
 
    @media (min-width: map-get($breakpoints, desktop)) {
-      margin-top: 1.5rem;
+    padding-top: .3rem;
    }
 
+}
+
+.breadcrumb-element a
+{
+  color: var(--accent-green);
+  font-weight: normal;
 }
 
 
@@ -117,10 +128,15 @@ footer {
   content: none !important;
 }
 
-//Sidebar Toc
+//Left Toc
 .sidebar .toc a {
   font-weight: normal;
   font-size: 0.9rem;
+}
+
+.page > #quartz-body .right.sidebar
+{
+  padding-top: 3.25rem;
 }
 
 // Page listing
@@ -137,7 +153,11 @@ footer {
 
 // Page
 .article-title {
-  margin-top: 0;
+  margin-top: -0.1rem;
+}
+
+.breadcrumb-container + .article-title {
+  margin-top: 2rem;
 }
 
 .page-header .tag-link {
@@ -154,13 +174,25 @@ footer {
   font-size: 0.9rem;
 }
 
-
-code.mermaid svg text,
-code.mermaid svg tspan,
-code.mermaid svg foreignObject p {
-  color: var(--text-color,  --accent-green) !important;
+.recent-ul {
+  padding-left: 1.2rem;
+  margin: 0;
 }
 
+.recent-li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.recent-li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  color: var(--gray);
+  font-size: 1rem;
+}
 
 .backlinks ul.overflow li > a {
   position: relative;
@@ -183,22 +215,8 @@ code.mermaid svg foreignObject p {
 }
 
 
-.recent-ul {
-  padding-left: 1.2rem;
-  margin: 0;
-}
-
-.recent-li {
-  position: relative;
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-.recent-li::before {
-  content: "-";
-  position: absolute;
-  left: 0;
-  top: -0.1rem;
-  color: var(--gray);
-  font-size: 1rem;
+code.mermaid svg text,
+code.mermaid svg tspan,
+code.mermaid svg foreignObject p {
+  color: var(--text-color,  --accent-green) !important;
 }
