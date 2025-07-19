@@ -16,6 +16,7 @@ created: 2025-07-19 19:19
 - Difficulty choosing among too many options.
 - Desire to have complete and precise information.
 - Lack of clear criteria for when a task is considered ready to start.
+- A lack of expertise and clarity on how to approach the task.
 
 ## How to recognize analysis paralysis
 
