@@ -104,7 +104,7 @@ gpg --armor --export email@example.org > ./pubkey_email_example_org.asc
 git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"
 ```
 
-Устанавливаем ключ для подписи (здесь замените идентификатор `98F2EBC6C153DED5E26D579E9B1CACC547A80702` на свой, который скопировали ранее):
+Устанавливаем ключ для подписи [[Несколько git профилей в одной учетной записи Windows|для профиля по умолчанию]] (здесь замените идентификатор `98F2EBC6C153DED5E26D579E9B1CACC547A80702` на свой, который скопировали ранее):
 
 ```sh
 git config --global user.signingkey 98F2EBC6C153DED5E26D579E9B1CACC547A80702

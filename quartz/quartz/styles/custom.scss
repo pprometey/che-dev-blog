@@ -160,3 +160,24 @@ code.mermaid svg tspan,
 code.mermaid svg foreignObject p {
   color: var(--text-color,  --accent-green) !important;
 }
+
+
+.backlinks ul.overflow li > a {
+  position: relative;
+  display: block;
+  padding-left: 0.7rem;
+  padding-right: 0.5rem;
+  text-indent: 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.backlinks ul.overflow li > a::before {
+  content: "- ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-green);
+  font-weight: bold;
+  user-select: none;
+}

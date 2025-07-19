@@ -11,7 +11,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   afterBody: [
     Component.ConditionalRender({
-      component: Component.RecentNotes({ 
+      component: Component.RecentNotes({
         limit: 5,
         showTags: false,
         filter: excludeIndexBlog
@@ -64,8 +64,8 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Graph(),
     Component.Backlinks(),
+    Component.Graph()
   ],
 }
 

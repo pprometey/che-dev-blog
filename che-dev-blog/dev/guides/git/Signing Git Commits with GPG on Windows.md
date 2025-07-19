@@ -104,7 +104,7 @@ Set the path to the GPG executable:
 git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"
 ```
 
-Set the signing key (replace `98F2EBC6C153DED5E26D579E9B1CACC547A80702` with your actual key ID):
+Set the signing key for the [[Multiple Git Profiles in a Single Windows Account|default Git profile]] (replace `98F2EBC6C153DED5E26D579E9B1CACC547A80702` with your actual key ID):
 
 ```sh
 git config --global user.signingkey 98F2EBC6C153DED5E26D579E9B1CACC547A80702
