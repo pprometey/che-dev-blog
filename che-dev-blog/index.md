@@ -3,6 +3,7 @@ title: A Software Engineer’s Notes
 publish: true
 enableToc: false
 comments: false
+tags: ["analyst", "dev", "devops"]
 created: 2025-07-03
 ---
 ## Welcome
