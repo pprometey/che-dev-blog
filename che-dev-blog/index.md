@@ -17,5 +17,7 @@ created: 2025-07-03
 
 ### Links
 
-- **Github**: [pprometey](https://github.com/pprometey)
-- **Habr**: [@pprometey](https://habr.com/ru/users/pprometey)
+- <https://github.com/pprometey>
+- <https://dev.to/pprometey>
+- <https://dou.ua/users/alexey-chernyavskiy>
+- <https://habr.com/ru/users/pprometey>
