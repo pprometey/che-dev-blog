@@ -35,7 +35,7 @@
 // Page Title
 .page-title{
   font-size: 1.5rem;
-  line-height: 0; 
+  line-height: 0;
 }
 
 .page-title a {
@@ -65,7 +65,7 @@
 //Breadcrumb
 .breadcrumb-container {
     margin-bottom: 1rem;
-    
+
    @media (min-width: map-get($breakpoints, desktop)) {
       margin-top: 1.5rem;
    }
@@ -88,7 +88,7 @@ footer {
 
 .sidebar .explorer a:not(.folder-title) {
   font-weight: normal;
-  font-size: 0.9rem;  
+  font-size: 0.9rem;
 }
 
 .sidebar .explorer ul.content li {
@@ -154,3 +154,9 @@ footer {
   font-size: 0.9rem;
 }
 
+
+code.mermaid svg text,
+code.mermaid svg tspan,
+code.mermaid svg foreignObject p {
+  color: var(--text-color,  --accent-green) !important;
+}

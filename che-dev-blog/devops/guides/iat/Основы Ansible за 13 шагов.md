@@ -339,8 +339,6 @@ ansible cluster_servers -m shell -a "ls -lpa /home/developer" -vvv
 ansible-doc -l
 ```
 
----
-
 ### Основные модули Ansible
 
 #### `setup`

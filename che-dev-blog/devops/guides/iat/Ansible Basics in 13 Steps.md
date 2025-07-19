@@ -343,8 +343,6 @@ To list all available modules:
 ansible-doc -l
 ```
 
----
-
 ### Essential Ansible Modules
 
 #### `setup`
