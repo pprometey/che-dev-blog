@@ -62,7 +62,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-       folderDefaultState: "open" // "open" | "collapsed"
+       folderDefaultState: "collapsed" // "open" | "collapsed"
     }),
     // Component.Explorer({
     //   mapFn: (node) => {
