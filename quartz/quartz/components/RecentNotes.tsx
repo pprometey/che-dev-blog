@@ -54,6 +54,9 @@ export default ((userOpts?: Partial<Options>) => {
                         {title}
                       </a>
                     </h3>
+                  {opts.showDescription && page.frontmatter?.description && (
+                    <p class="description">{page.frontmatter.description}</p>
+                  )}
                   </div>
                   {page.dates && (
                     <p class="meta">
@@ -73,11 +76,6 @@ export default ((userOpts?: Partial<Options>) => {
                         </li>
                       ))}
                     </ul>
-                  )}
-                  {opts.showDescription && page.frontmatter?.description && (
-                    <p class="description">
-                      {page.frontmatter.description}
-                    </p>
                   )}
                 </div>
               </li>

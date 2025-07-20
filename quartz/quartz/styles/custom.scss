@@ -230,8 +230,20 @@ footer {
 
 .recent-li {
   position: relative;
-  margin-bottom: 1rem;
   padding-left: 1rem;
+}
+
+.recent-notes > ul.recent-ul > li {
+  margin-bottom: 2rem;
+}
+
+.recent-li .description {
+    margin-top: 0.3rem;
+}
+
+.recent-notes > ul.recent-ul > li .section > .meta{
+  margin-top: -.5rem;
+  font-size: .8rem;
 }
 
 .recent-li::before {

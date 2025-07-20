@@ -14,6 +14,7 @@ type OrderEntries = "sort" | "filter" | "map"
 export interface Options {
   title?: string
   folderDefaultState: "collapsed" | "open"
+  maxExpandLevel?: number
   folderClickBehavior: "collapse" | "link"
   useSavedState: boolean
   sortFn: (a: FileTrieNode, b: FileTrieNode) => number
@@ -24,6 +25,7 @@ export interface Options {
 
 const defaultOptions: Options = {
   folderDefaultState: "collapsed",
+  maxExpandLevel: 0,
   folderClickBehavior: "link",
   useSavedState: true,
   mapFn: (node) => {
@@ -65,6 +67,7 @@ export default ((userOpts?: Partial<Options>) => {
         class={classNames(displayClass, "explorer")}
         data-behavior={opts.folderClickBehavior}
         data-collapsed={opts.folderDefaultState}
+        data-maxexpandlevel={opts.maxExpandLevel}
         data-savestate={opts.useSavedState}
         data-data-fns={JSON.stringify({
           order: opts.order,

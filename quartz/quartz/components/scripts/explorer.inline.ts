@@ -6,6 +6,7 @@ type MaybeHTMLElement = HTMLElement | undefined
 
 interface ParsedOptions {
   folderClickBehavior: "collapse" | "link"
+  maxExpandLevel?: number
   folderDefaultState: "collapsed" | "open"
   useSavedState: boolean
   sortFn: (a: FileTrieNode, b: FileTrieNode) => number
@@ -99,6 +100,7 @@ function createFolderNode(
   currentSlug: FullSlug,
   node: FileTrieNode,
   opts: ParsedOptions,
+  level: number = 1,
 ): HTMLLIElement {
   const template = document.getElementById("template-folder") as HTMLTemplateElement
   const clone = template.content.cloneNode(true) as DocumentFragment
@@ -125,24 +127,29 @@ function createFolderNode(
     span.textContent = node.displayName
   }
 
-  // if the saved state is collapsed or the default state is collapsed
-  const isCollapsed =
-    currentExplorerState.find((item) => item.path === folderPath)?.collapsed ??
-    opts.folderDefaultState === "collapsed"
+  const savedState = currentExplorerState.find((item) => item.path === folderPath)?.collapsed
+  const isCollapsedByState = savedState ?? opts.folderDefaultState === "collapsed"
 
-  // if this folder is a prefix of the current path we
-  // want to open it anyways
   const simpleFolderPath = simplifySlug(folderPath)
   const folderIsPrefixOfCurrentSlug =
     simpleFolderPath === currentSlug.slice(0, simpleFolderPath.length)
 
-  if (!isCollapsed || folderIsPrefixOfCurrentSlug) {
+  const maxLevel = opts.maxExpandLevel ?? 0
+
+  if (
+    !isCollapsedByState ||
+    folderIsPrefixOfCurrentSlug ||
+    maxLevel === 0 ||
+    level <= maxLevel
+  ) {
     folderOuter.classList.add("open")
+  } else {
+    folderOuter.classList.remove("open")
   }
 
   for (const child of node.children) {
     const childNode = child.isFolder
-      ? createFolderNode(currentSlug, child, opts)
+      ? createFolderNode(currentSlug, child, opts, level + 1)
       : createFileNode(currentSlug, child)
     ul.appendChild(childNode)
   }
@@ -158,6 +165,7 @@ async function setupExplorer(currentSlug: FullSlug) {
     const opts: ParsedOptions = {
       folderClickBehavior: (explorer.dataset.behavior || "collapse") as "collapse" | "link",
       folderDefaultState: (explorer.dataset.collapsed || "collapsed") as "collapsed" | "open",
+      maxExpandLevel: parseInt(explorer.dataset.maxexpandlevel || "0"),
       useSavedState: explorer.dataset.savestate === "true",
       order: dataFns.order || ["filter", "map", "sort"],
       sortFn: new Function("return " + (dataFns.sortFn || "undefined"))(),
@@ -207,9 +215,10 @@ async function setupExplorer(currentSlug: FullSlug) {
 
     // Create and insert new content
     const fragment = document.createDocumentFragment()
+
     for (const child of trie.children) {
       const node = child.isFolder
-        ? createFolderNode(currentSlug, child, opts)
+        ? createFolderNode(currentSlug, child, opts, 1)
         : createFileNode(currentSlug, child)
 
       fragment.appendChild(node)

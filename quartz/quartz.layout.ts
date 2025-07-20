@@ -62,17 +62,10 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-       folderDefaultState: "collapsed" // "open" | "collapsed"
+       folderDefaultState: "collapsed",
+       maxExpandLevel: 2,
+       useSavedState: true,
     }),
-    // Component.Explorer({
-    //   mapFn: (node) => {
-    //     if (node.isFolder) {
-    //       node.displayName = "📁 " + node.displayName
-    //     } else {
-    //       node.displayName = "- " + node.displayName
-    //     }
-    //   },
-    // })
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
