@@ -4,7 +4,7 @@ description: Analysis paralysis is a state where a person or a team becomes exce
 lang: en
 draft: false
 publish: true
-tags: ["analysis paralysis", "decision traps", "development traps", "analyst"]
+tags: ["analysis paralysis", "decision traps", "development traps", "dev"]
 created: 2025-07-19 19:19
 ---
 

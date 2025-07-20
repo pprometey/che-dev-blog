@@ -10,24 +10,69 @@
   --accent-purple: #7b5ea7;
 }
 
-//Home Page
 .about-text {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1rem;
 
-  img {
+  .profile-pic {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
     max-width: 180px;
     height: auto;
-    flex-shrink: 0;
     border-radius: 8px;
   }
 
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
   @media (max-width: 768px) {
-    flex-direction: column;
     img {
+      float: none;
+      display: block;
+      margin: 0 auto 1rem;
       max-width: 100%;
+    }
+  }
+
+  .profile-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    a {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+      min-width: 64px;
+
+      &.github {
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 0.296875C5.37 0.296875 0 5.66688 0 12.2969C0 17.6869 3.438 22.1669 8.207 23.7969C8.805 23.8969 9.025 23.5469 9.025 23.2369C9.025 22.9569 9.015 22.1969 9.01 21.2169C5.672 21.8969 4.968 19.7169 4.968 19.7169C4.422 18.3369 3.633 17.9669 3.633 17.9669C2.545 17.2469 3.717 17.2619 3.717 17.2619C4.922 17.3519 5.555 18.5069 5.555 18.5069C6.625 20.2969 8.359 19.7969 9.05 19.4869C9.152 18.7069 9.467 18.1769 9.816 17.8769C7.145 17.5769 4.344 16.4969 4.344 11.7869C4.344 10.4469 4.828 9.35688 5.637 8.50688C5.51 8.20688 5.085 6.94688 5.754 5.29688C5.754 5.29688 6.773 4.96688 8.995 6.46688C9.965 6.20688 10.995 6.07688 12.025 6.07188C13.055 6.07688 14.085 6.20688 15.055 6.46688C17.277 4.96688 18.295 5.29688 18.295 5.29688C18.965 6.94688 18.54 8.20688 18.412 8.50688C19.223 9.35688 19.705 10.4469 19.705 11.7869C19.705 16.5069 16.898 17.5719 14.219 17.8669C14.664 18.2469 15.059 18.9869 15.059 20.1069C15.059 21.7269 15.045 22.9269 15.045 23.2369C15.045 23.5519 15.262 23.9069 15.867 23.7969C20.633 22.1639 24.067 17.6839 24.067 12.2969C24.067 5.66688 18.698 0.296875 12 0.296875Z'/></svg>");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+
+      img, svg {
+        display: block;
+        margin: 0;
+        width: 16px;
+        height: 16px;
+      }
+
+      div {
+        font-weight: normal;
+      }
     }
   }
 }
@@ -213,4 +258,9 @@ code.mermaid svg text,
 code.mermaid svg tspan,
 code.mermaid svg foreignObject p {
   color: var(--text-color,  --accent-green) !important;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  font-weight: normal;
 }

@@ -1,0 +1,24 @@
+/**
+ * Layout breakpoints
+ * $mobile: screen width below this value will use mobile styles
+ * $desktop: screen width above this value will use desktop styles
+ * Screen width between $mobile and $desktop width will use the tablet layout.
+ * assuming mobile < desktop
+ */
+.backlinks {
+  flex-direction: column;
+}
+.backlinks > h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.backlinks > ul.overflow {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+  max-height: calc(100% - 2rem);
+  overscroll-behavior: contain;
+}
+.backlinks > ul.overflow > li > a {
+  background-color: transparent;
+}/*# sourceMappingURL=backlinks.css.map */

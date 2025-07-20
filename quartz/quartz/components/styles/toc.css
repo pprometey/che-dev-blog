@@ -1,0 +1,80 @@
+/**
+ * Layout breakpoints
+ * $mobile: screen width below this value will use mobile styles
+ * $desktop: screen width above this value will use desktop styles
+ * Screen width between $mobile and $desktop width will use the tablet layout.
+ * assuming mobile < desktop
+ */
+.toc {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  min-height: 1.4rem;
+  flex: 0 0.5 auto;
+}
+.toc:has(button.toc-header.collapsed) {
+  flex: 0 1 1.4rem;
+}
+
+button.toc-header {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+}
+button.toc-header h3 {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0;
+}
+button.toc-header .fold {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  opacity: 0.8;
+}
+button.toc-header.collapsed .fold {
+  transform: rotateZ(-90deg);
+}
+
+ul.toc-content.overflow {
+  list-style: none;
+  position: relative;
+  margin: 0.5rem 0;
+  padding: 0;
+  max-height: calc(100% - 2rem);
+  overscroll-behavior: contain;
+  list-style: none;
+}
+ul.toc-content.overflow > li > a {
+  color: var(--dark);
+  opacity: 0.35;
+  transition: 0.5s ease opacity, 0.3s ease color;
+}
+ul.toc-content.overflow > li > a.in-view {
+  opacity: 0.75;
+}
+ul.toc-content.overflow .depth-0 {
+  padding-left: calc(1rem * 0);
+}
+ul.toc-content.overflow .depth-1 {
+  padding-left: calc(1rem * 1);
+}
+ul.toc-content.overflow .depth-2 {
+  padding-left: calc(1rem * 2);
+}
+ul.toc-content.overflow .depth-3 {
+  padding-left: calc(1rem * 3);
+}
+ul.toc-content.overflow .depth-4 {
+  padding-left: calc(1rem * 4);
+}
+ul.toc-content.overflow .depth-5 {
+  padding-left: calc(1rem * 5);
+}
+ul.toc-content.overflow .depth-6 {
+  padding-left: calc(1rem * 6);
+}/*# sourceMappingURL=toc.css.map */

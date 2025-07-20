@@ -4,18 +4,19 @@ description: Definition of Ready (DoR) is a set of criteria that a task must mee
 lang: en
 draft: false
 publish: true
-tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "workflow", "analyst"] 
+tags: ["Scrum", "Agile", "DoR", "Definition of Ready", "workflow", "dev"] 
 created: 2025-07-19 19:19
 ---
 
-**Definition of Ready (DoR)** is a set of criteria that a task must meet before a developer starts working on it.
+**Definition of Ready (DoR)** is a set of criteria that it is recommended to meet when defining a task before handing it over to a developer for implementation.
 
 DoR helps to:
 
 - avoid ambiguity in requirements  
-- reduce on-the-fly rework  
-- speed up delivery and prevent [[Analysis paralysis|analysis paralysis]]  
+- reduce rework during development  
+- speed up delivery and prevent  [[Analysis paralysis|analysis paralysis]]
 - make planning more accurate and predictable  
+- improve the overall quality of the final result
 
 ## Core DoR Criteria
 

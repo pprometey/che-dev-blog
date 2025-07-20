@@ -13,7 +13,8 @@ export const sharedPageComponents: SharedLayout = {
     Component.ConditionalRender({
       component: Component.RecentNotes({
         limit: 10,
-        showTags: false,
+        showTags: true,
+        showDescription: true,
         filter: excludeIndexBlog
       }),
     condition: (page) => page.fileData.slug == "index",
@@ -60,7 +61,18 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+       folderDefaultState: "open" // "open" | "collapsed"
+    }),
+    // Component.Explorer({
+    //   mapFn: (node) => {
+    //     if (node.isFolder) {
+    //       node.displayName = "📁 " + node.displayName
+    //     } else {
+    //       node.displayName = "- " + node.displayName
+    //     }
+    //   },
+    // })
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
