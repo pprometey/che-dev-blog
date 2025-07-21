@@ -139,7 +139,6 @@ function createFolderNode(
   if (
     !isCollapsedByState ||
     folderIsPrefixOfCurrentSlug ||
-    maxLevel === 0 ||
     level <= maxLevel
   ) {
     folderOuter.classList.add("open")
