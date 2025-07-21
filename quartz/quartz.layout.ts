@@ -62,7 +62,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-       folderDefaultState: "collapsed",
+       folderDefaultState: "open",
        maxExpandLevel: 2,
        useSavedState: true,
     }),
