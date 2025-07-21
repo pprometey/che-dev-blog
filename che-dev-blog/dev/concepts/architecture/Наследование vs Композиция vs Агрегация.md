@@ -4,7 +4,7 @@ description: Обзор ключевых типов связей между кл
 lang: ru
 draft: false
 publish: true
-tags: ["dev", "архитектура", "диаграмма классов", "software design"]
+tags: ["dev", "архитектура", "диаграммы классов", "программный дизайн"]
 created: 2025-07-20 10:16
 ---
 
