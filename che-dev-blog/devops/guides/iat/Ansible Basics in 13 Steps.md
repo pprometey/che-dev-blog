@@ -2399,6 +2399,60 @@ Example: generate a key and self-signed certificate once, then distribute them t
 
 In this example, the key and certificate are created once on the control node (`localhost`) and then copied to every target server.
 
+But there is an important caveat — when using the `serial` parameter (this is a parameter in an Ansible playbook that sets the number of hosts processed simultaneously within one play run), tasks with `run_once` will execute on one host in each serial batch. If a task must run only once regardless of the `serial` mode, use the condition `when: inventory_hostname == ansible_play_hosts_all[0]`.
+
+#### Pitfalls of delegate_to and run_once: the problem of variable access
+
+When working with Ansible, there is often a need to run a task once on the control machine (for example, to read a configuration file) and then use the result on all target hosts. It might seem that the combination of `delegate_to: localhost` and `run_once: true` should solve this problem, but there is a subtle tricky detail.
+
+##### The problem
+
+Consider a typical scenario — reading a value once (for example, an API key) from a configuration file on the control machine:
+
+```yaml
+- name: Read config file
+  shell: "grep '^api_key=' ~/.config/app.conf | cut -d'=' -f2"
+  register: api_key_raw
+  delegate_to: localhost
+  run_once: true
+
+- name: Use API key on all hosts
+  set_fact:
+    api_key: "{{ hostvars['localhost']['api_key_raw'].stdout }}"
+```
+
+This code looks logical but often causes an error: `'ansible.vars.hostvars.HostVarsVars object' has no attribute 'api_key_raw'`. The problem is that with `run_once: true`, the registered result is not necessarily saved under `hostvars['localhost']`, but in the context of the first host in the target hosts list.
+
+##### Solutions
+
+**Method 1: Referencing the first host in the group**
+
+```yaml
+- name: Read config file
+  shell: "grep '^api_key=' ~/.config/app.conf | cut -d'=' -f2"
+  register: api_key_raw
+  delegate_to: localhost
+  run_once: true
+
+- name: Use API key on all hosts
+  set_fact:
+    api_key: "{{ hostvars[ansible_play_hosts[0]]['api_key_raw'].stdout }}"
+```
+
+Here, we access the result through the first host in the list where the `register` result is actually saved.
+
+**Method 2: Using the lookup plugin (recommended)**
+
+```yaml
+- name: Set API key for all hosts using lookup
+  set_fact:
+    api_key: "{{ lookup('pipe', 'grep \"^api_key=\" ~/.config/app.conf | cut -d\"=\" -f2') }}"
+```
+
+The simplest solution is that the `lookup` runs automatically on the control machine without the need for `delegate_to` or `run_once`, but this task will execute separately for each host rather than only once.
+
+Understanding these nuances will help avoid common errors when working with delegated tasks in Ansible.
+
 ## Step 12. Error Handling in Ansible
 
 When working with Ansible in real-world scenarios, it's important to understand how tasks are executed and in what order.
