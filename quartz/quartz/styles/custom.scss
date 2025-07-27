@@ -281,3 +281,25 @@ code.mermaid svg tspan,
 code.mermaid svg foreignObject p {
   color: var(--text-color,  --accent-green) !important;
 }
+
+.backlinks,
+.graph {
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+
+.backlinks:has(> .overflow) {
+  max-height: none;
+  overflow-y: visible;
+}
+
+.backlinks {
+  display: flex;
+  flex-direction: column;
+  max-height: 30vh;
+}
+
+.backlinks > ul.overflow {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
