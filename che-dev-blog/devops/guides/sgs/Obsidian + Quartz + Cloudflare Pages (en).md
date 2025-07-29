@@ -80,7 +80,7 @@ Then:
 
 ### 4. Configure Quartz
 
-1. Delete the entire quartz/content folder (it contains only a .gitkeep):
+4.1. Delete the entire quartz/content folder (it contains only a .gitkeep):
 
 ```bash
 rm -rf quartz/content
@@ -89,7 +89,7 @@ rm -rf quartz/content
 # rmdir /s /q quartz\content
 ```
 
-2. Create a symbolic link named quartz/content pointing to your Obsidian vault folder:
+4.2. Create a symbolic link named quartz/content pointing to your Obsidian vault folder:
 
 ```bash
 ln -s che-dev-blog quartz/content
@@ -139,8 +139,11 @@ Framework preset | None
 Build command | `mkdir -p quartz/content && find che-dev-blog -mindepth 1 -maxdepth 1 -exec mv {} quartz/content/ \; && cd quartz && npm install && npx quartz build`
 Build output directory | `quartz/public`
 
+  > **Important**: In the Build command option, replace che-dev-blog with the name of the folder containing your Obsidian vault.
+
 - Press Save and deploy.
+
 Your site will be deployed in about a minute. The site will be available at: <https://chernyavsky.pages.dev>.  
-The code for this project is on GitHub: https://github.com/pprometey/che-dev-blog
+The code for this project is on GitHub: <https://github.com/pprometey/che-dev-blog>
 
 From now on, every time you push changes to the main branch on GitHub, Cloudflare Pages will rebuild and update your site automatically.

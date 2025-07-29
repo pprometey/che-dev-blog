@@ -78,7 +78,7 @@ git subtree pull --prefix=quartz https://github.com/jackyzha0/quartz.git v4 --sq
 
 ### 4. Настройка Quartz
 
-1. Удалите папку `quartz/content` (в ней только `.gitkeep`):
+4.1. Удалите папку `quartz/content` (в ней только `.gitkeep`):
 
 ```bash
 rm -rf quartz/content
@@ -86,8 +86,8 @@ rm -rf quartz/content
 # в Windows: `rmdir /s /q quartz\content`
 ```
 
-2. Создайте символическую ссылку `quartz/content`, указывающую на папку Obsidian:
-3. 
+4.2. Создайте символическую ссылку `quartz/content`, указывающую на папку Obsidian:
+
 ```bash
 ln -s che-dev-blog quartz/content
 
@@ -110,7 +110,7 @@ npx quartz build --serve
 ```
 
 - Команда `npx quartz build` компилирует сайт и сохраняет статические файлы в папку `quartz/public`
-- Опция `--serve` запускает локальный сервер с автообновлением - удобно для предпросмотра по адресу http://localhost:8080/
+- Опция `--serve` запускает локальный сервер с автообновлением - удобно для предпросмотра по адресу <http://localhost:8080/>
 
 ### 6. Развертывание Quartz-сайта через Cloudflare Pages
 
@@ -126,7 +126,7 @@ git push origin main
 
 #### Размещение на Cloudflare Pages
 
-- Перейдите на https://dash.cloudflare.com/ и войдите в свою учётную запись
+- Перейдите на <https://dash.cloudflare.com/> и войдите в свою учётную запись
 - В боковом меню выберите **Compute (Workers) -> Workers & Pages**
 - Нажмите **Create application -> Pages -> Connect to Git**
 - Выберите свой репозиторий GitHub (например, `che-dev-blog`)
@@ -140,9 +140,11 @@ Framework preset | None
 Build command | `mkdir -p quartz/content && find che-dev-blog -mindepth 1 -maxdepth 1 -exec mv {} quartz/content/ \; && cd quartz && npm install && npx quartz build`
 Build output directory | `quartz/public`
 
+  > **Важно**. В опции `Build command` замените `che-dev-blog` на имя папки с вашим хранилищем Obsidian.
+
 - Нажмите **Save and deploy**
 
 После создания сайта он будет доступен по адресу: https://<имя_проекта_в_cloudflare_page>.pages.dev (я назвал проект `chernyavsky` и в моем случае это <https://chernyavsky.pages.dev>).  
-Код этого проекта Github: https://github.com/pprometey/che-dev-blog
+Код этого проекта Github: <https://github.com/pprometey/che-dev-blog>
 
 С этого момента при каждом пуше в ветку `main` Cloudflare Pages будет автоматически пересобирать и обновлять сайт.
