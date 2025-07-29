@@ -136,10 +136,11 @@ Option | Value
 Project name | Specify the domain name you'd like to have before .pages.dev. The project name determines your site's address
 Production branch | main
 Framework preset | None
-Build command | `mkdir -p quartz/content && cp -r che-dev-blog/. quartz/content/ && cd quartz && npm install && npx quartz build`
+Build command | `mkdir -p quartz/content && find che-dev-blog -mindepth 1 -maxdepth 1 -exec mv {} quartz/content/ \; && cd quartz && npm install && npx quartz build`
 Build output directory | `quartz/public`
 
 - Press Save and deploy.
-Your site will be deployed in about a minute. The site will be available at: <https://chernyavsky.pages.dev>
+Your site will be deployed in about a minute. The site will be available at: <https://chernyavsky.pages.dev>.  
+The code for this project is on GitHub: https://github.com/pprometey/che-dev-blog
 
 From now on, every time you push changes to the main branch on GitHub, Cloudflare Pages will rebuild and update your site automatically.

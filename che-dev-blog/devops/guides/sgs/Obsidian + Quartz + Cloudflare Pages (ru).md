@@ -137,11 +137,12 @@ git push origin main
 Project name | Укажите какое бы доменное имя вы бы хотели иметь перед `.pages.dev`. Название проекта определяет адрес сайта.
 Production branch | main  
 Framework preset | None
-Build command | `mkdir -p quartz/content && cp -r che-dev-blog/. quartz/content/ && cd quartz && npm install && npx quartz build`
+Build command | `mkdir -p quartz/content && find che-dev-blog -mindepth 1 -maxdepth 1 -exec mv {} quartz/content/ \; && cd quartz && npm install && npx quartz build`
 Build output directory | `quartz/public`
 
 - Нажмите **Save and deploy**
 
-После создания сайта он будет доступен по адресу: https://<имя_проекта_в_cloudflare_page>.pages.dev (я назвал проект `chernyavsky` и в моем случае это <https://chernyavsky.pages.dev>)
+После создания сайта он будет доступен по адресу: https://<имя_проекта_в_cloudflare_page>.pages.dev (я назвал проект `chernyavsky` и в моем случае это <https://chernyavsky.pages.dev>).  
+Код этого проекта Github: https://github.com/pprometey/che-dev-blog
 
 С этого момента при каждом пуше в ветку `main` Cloudflare Pages будет автоматически пересобирать и обновлять сайт.
