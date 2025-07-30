@@ -19,8 +19,6 @@ To get the most out of this course, it’s highly recommended that you follow ea
 - Or explore the full course project with all artifacts and development history:  
   <https://github.com/pprometey/ansible-tutorial-project>
 
-Вот адаптированный и естественный перевод для англоязычной аудитории:
-
 ### How to Use This Environment for the Course
 
 1. **Install Docker Desktop**
