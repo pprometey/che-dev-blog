@@ -30,7 +30,8 @@ const config: QuartzConfig = {
         body: "Source Sans Pro",
 //        code: "IBM Plex Mono",
 //        code: "Fira Code",
-        code: "	JetBrains Mono",
+//        code: "	JetBrains Mono",
+        code: "Google Sans Code",
       },
       colors: {
         lightMode: {
