@@ -19,7 +19,7 @@ created: 2025-07-03
         <a href="https://github.com/pprometey" aria-label="GitHub" target="_blank" rel="noopener" class="github">
           <div>GitHub</div>
         </a>
-        <a href="https://dou.ua/users/alexey-chernyavskiy" aria-label="DOU.ua" target="_blank" rel="noopener">
+        <a href="https://dou.ua/users/alexey-chernyavskiy" aria-label="DOU.ua" target="_blank" rel="noopener" style="display: none;">
           <img src="/~attachments/icons/dou.ua.png" alt="DOU logo" />
           <div>DOU.ua</div>
         </a>
