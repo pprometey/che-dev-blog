@@ -4,8 +4,19 @@ description: How to build psychological safety, review mistakes without blame, a
 lang: ru
 draft: false
 publish: true
-tags: ["dev", "workflow", "blameless culture", "management", "teamwork", "psychological safety", "Lencioni model"]
+tags:
+  - dev
+  - workflow
+  - blameless
+  - culture
+  - management
+  - teamwork
+  - psychological
+  - safety
+  - Lencioni
+  - model
 created: 2025-08-17 04:28
+image: ~attachments/lensioni-en.png
 ---
 
 At the heart of a [blameless culture](https://www.atlassian.com/blog/teamwork/how-to-cultivate-a-blameless-culture)  is a simple principle: **there are no bad performers, only ineffective processes**. People naturally tend to blame others – a phenomenon known as the "fundamental attribution error": we explain others’ mistakes by their character (they are careless or irresponsible), while we justify our own mistakes by external circumstances (it was not my fault; it just happened due to certain factors).
@@ -52,7 +63,7 @@ For leaders aiming to build productive teams, the [**Lencioni Model**](https://a
 5. Finally, this leads to **Inattention to Results** – lack of accountability shifts focus to personal interests, lowering team effectiveness and reducing achievement of shared goals.
     
 
-![[Blameless Culture and the Lencioni Model-1755387132614.png]]
+![[lensioni-en.png]]
 
 Power struggles and distrust are common team dysfunctions. Overcoming them requires team members to show vulnerability and take risks.
 
