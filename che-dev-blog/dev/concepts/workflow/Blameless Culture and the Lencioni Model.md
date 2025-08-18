@@ -7,14 +7,11 @@ publish: true
 tags:
   - dev
   - workflow
-  - blameless
-  - culture
+  - blameless-culture
   - management
   - teamwork
-  - psychological
-  - safety
-  - Lencioni
-  - model
+  - psychological-safety
+  - Lencioni-model
 created: 2025-08-17 04:28
 image: ~attachments/lensioni-en.png
 ---
