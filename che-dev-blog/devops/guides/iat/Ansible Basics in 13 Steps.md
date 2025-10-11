@@ -4,7 +4,7 @@ description: Interactive Ansible basics course with a ready-to-use environment b
 lang: en
 draft: false
 publish: true
-tags: ["infrastructure automation tools", "ansible", "devops", "dev containers", "docker", "infrastructure as code"]
+tags: ["infrastructure-automation-tools", "ansible", "devops", "dev-containers", "docker", "infrastructure-as-code"]
 created: 2025-07-18 16:58
 ---
 

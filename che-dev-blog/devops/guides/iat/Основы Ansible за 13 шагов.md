@@ -4,7 +4,7 @@ description: Интерактивный курс по основам Ansible с 
 lang: ru
 draft: false
 publish: true
-tags: ["infrastructure automation tools", "ansible", "devops", "dev containers", "docker", "infrastructure as code"]
+tags: ["infrastructure-automation-tools", "ansible", "devops", "dev-containers", "docker", "infrastructure-as-code"]
 created: 2025-07-18 15:26
 ---
 

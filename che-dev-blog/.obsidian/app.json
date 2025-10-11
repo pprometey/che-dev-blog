@@ -8,5 +8,6 @@
   ],
   "attachmentFolderPath": "~attachments",
   "alwaysUpdateLinks": true,
-  "tabSize": 2
+  "tabSize": 2,
+  "promptDelete": false
 }
