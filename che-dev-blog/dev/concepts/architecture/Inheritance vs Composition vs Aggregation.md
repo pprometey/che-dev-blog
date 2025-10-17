@@ -4,7 +4,7 @@ description: A concise overview of key class relationship types in object-orient
 lang: en
 draft: false
 publish: true
-tags: ["dev", "architecture", "class diagrams", "software design"]
+tags: ["dev", "architecture", "class-diagrams", "software-design"]
 created: 2025-07-20 17:00
 ---
 

@@ -4,7 +4,7 @@ description: An overview of four data consistency models in distributed systems 
 lang: en
 draft: false
 publish: true
-tags: ["dev", "architecture", "consistency", "strong consistency", "sequential consistency", "eventual consistency", "weak consistency", "software design", "distributed systems", "parallel computing"]
+tags: ["dev", "architecture", "consistency", "strong-consistency", "sequential consistency", "eventual-consistency", "weak-consistency", "software-design", "distributed-systems", "parallel-computing"]
 created: 2025-07-21 19:09
 ---
 
