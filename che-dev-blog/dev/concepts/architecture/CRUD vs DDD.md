@@ -188,7 +188,6 @@ erDiagram
     time EndTime
     bool IsBusy
     decimal Price
-    %% Unique index: DoctorId + Date + StartTime
   }
 
   APPOINTMENT {
@@ -197,17 +196,16 @@ erDiagram
     int PatientId
     int ScheduleId
     datetime ScheduledTime
-    string Status  %% AppointmentStatus (Scheduled, Confirmed, Cancelled, Completed)
+    int Status
   }
 
   PAYMENT {
     int Id
     int AppointmentId
     decimal Amount
-    string Status  %% PaymentStatus (Paid, Refunded)
+    int Status
     datetime PaymentDate
   }
-
 
 ```
 
