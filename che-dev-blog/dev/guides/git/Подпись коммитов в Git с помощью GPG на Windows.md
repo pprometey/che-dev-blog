@@ -139,3 +139,36 @@ git log --show-signature
 
 Git выведет информацию о том, был ли коммит подписан и каким ключом.
 
+## Перенос ключей на другой компьютер
+
+Смотрим список установленных на компьютере ключей:
+
+```sh
+gpg --list-keys
+```
+
+Примерный вывод:
+
+```sh
+sec   rsa4096/98F2EBC6C153DED5E26D579E9B1CACC547A80702 2025-07-19 [SC]
+      uid   [ultimate] Alexei Chernyavsky (example.org) <email@example.org>
+      ssb   rsa4096/7C7183969D84B1A3 2025-07-19 [E]
+```
+
+Копируем в буфер обмена обмена идентификатор ключа: `98F2EBC6C153DED5E26D579E9B1CACC547A80702`
+
+Экспортируем публичный и секретный ключ:
+
+```sh
+gpg --output email@example.org_pub.gpg --armor --export 98F2EBC6C153DED5E26D579E9B1CACC547A80702
+gpg --output email@example.org_sec.gpg --armor --export-secret-key 98F2EBC6C153DED5E26D579E9B1CACC547A80702
+```
+
+Копируем экспортируемые ключи на другой компьютер, и устанавливаем уже на новом:
+
+```sh
+gpg --import ~/email@example.org_pub.gpg
+gpg --allow-secret-key-import --import ~/email@example.org_sec.gpg
+```
+
+После импорта проверяем, появились ли на новом компьютере ключи `gpg --list-keys`.
