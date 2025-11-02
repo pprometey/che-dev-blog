@@ -197,20 +197,17 @@ erDiagram
     int PatientId
     int ScheduleId
     datetime ScheduledTime
-    AppointmentStatus Status
+    string Status  %% AppointmentStatus (Scheduled, Confirmed, Cancelled, Completed)
   }
 
   PAYMENT {
     int Id
     int AppointmentId
     decimal Amount
-    PaymentStatus Status
+    string Status  %% PaymentStatus (Paid, Refunded)
     datetime PaymentDate
   }
 
-  %% Enum definitions
-  %% AppointmentStatus: Scheduled, Confirmed, Cancelled, Completed
-  %% PaymentStatus: Paid, Refunded
 
 ```
 
