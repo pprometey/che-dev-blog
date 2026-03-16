@@ -28,7 +28,7 @@ In this state of "cognitive defense", the rational mind goes offline. As a philo
 
 When this physiological "affect" kicks in - whether it is anger, fear, or wounded ego - logical arguments become white noise. The person starts using "motivated reasoning": instead of analyzing your points, they search for the smallest hooks to discredit them. In the end, after a heated argument, the opponent walks away even more convinced they are right, because they have just successfully "fended off an attack" on their identity.
 
-Understanding this effect changes the very strategy of communication. A head-on assault with facts is the shortest path to a brick wall. To be heard, you need to stop trying to "break through" the other person's fortress with logic and instead lower the threat level. Effective communication is only possible when the other person's amygdala is calm and they feel safe. As long as the music of reason plays for someone gripped by emotion, it remains nothing but the silent movement of lips.
+Understanding this effect changes the very strategy of communication. A head-on assault with facts is the shortest path to a brick wall. To be heard, you need to stop trying to "break through" the other person's fortress with logic and instead lower the threat level. Effective communication is only possible when the other person's amygdala is calm and they feel safe. As long as the song of reason plays for someone gripped by emotion, it remains nothing but the silent movement of lips.
 
 ---
 
